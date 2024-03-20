@@ -1,0 +1,59 @@
+/*
+file handling
+=================
+ to store data permanentaly in secondary storage device
+ following tools are use to maninatain files in c:
+ 
+ 1.FILE pointer:
+  --used to store an address of file stored in secondary memory
+  syntax:
+  FILE *p;
+  
+ 2.fopen()
+   --- this function is used to open afile in various modes
+   
+   w : this mode first create a  specified file & open it into write mode and 
+       return the base addreess of file to file pointer 
+       
+   r : this mode first search the specified file in file exist it open it into
+       read mode and return the base address of file pointer
+	   
+   a : appends the record at end of file 
+   
+   syntax
+   =======
+        <file pointer>=fopen("<filename>","<mode>");
+		
+		FILE *p;
+		p=fopen("emp.db","w");          //create a new file for write
+		p=fopen("emp.db","r");          //search a file for read
+		p=fopen("emp.db","a");          //search a file and open for add something in the end
+		
+   3.fwrite()		
+	 ---this function read data from (secondarymemory) and write into file 
+	     RAM (primary memory)
+	  
+	  syntax
+	  =======	 
+		 fwrite(&<memory variable>,sizeof(memory variable>,n,<file pointer>)	
+    
+	4.fwrite()		
+	 ---this function read data from RAM (primary memory) and write into file 
+	    (secondary memory)
+	  
+	  syntax
+	  =======	 
+		 fread(&<memory variable>,sizeof(memory variable>,n,<file pointer>)	
+		 
+	5.int feof(<file pointer>)                //file end of file
+	  ----return 1 at end of file return 0
+	  	
+example:
+student
+       roll no., name,p,c,m
+       60-100 A
+       48-59 B
+       33-47 C
+       0-33  		
+		
+		
